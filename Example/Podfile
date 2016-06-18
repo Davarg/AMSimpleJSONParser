@@ -1,0 +1,7 @@
+use_frameworks!
+target 'AMSimpleJSONParser_Tests' do
+  pod 'AMSimpleJSONParser', :path => '../'
+  
+  pod 'Specta'
+  pod 'Expecta'
+end
