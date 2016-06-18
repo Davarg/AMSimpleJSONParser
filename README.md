@@ -24,7 +24,7 @@ git clone https://github.com/Davarg/AMSimpleJSONParser.git
 
 ## Description
 
-If you are looking for simple and lightweight approach for parsing JSON data - you found it. All you need to know name of class model and JSON data.
+If you are looking for simple and lightweight approach for parsing JSON data - you found it. All you need to know class of model and JSON data.
 
 ## Example
 

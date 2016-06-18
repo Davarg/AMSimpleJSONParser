@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Parsing of JSON is never was so simple like now. All you need for successful parsing are name of model class and JSON data. Thats all, no more mapping or subclassing.
+Parsing of JSON is never was so simple like now. All you need for successful parsing are class of model and JSON data. Thats all, no more mapping or subclassing.
                        DESC
 
   s.homepage         = 'https://github.com/Davarg/AMSimpleJSONParser'
