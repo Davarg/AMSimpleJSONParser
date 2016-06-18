@@ -119,7 +119,10 @@ andWithSelectorArgument:(id)selectorArg {
         Class classOfProperty = [AMSimpleJsonParser getClassForPropertyObj:propertyObj];
         
         if ([selectorArg isKindOfClass:classOfProperty] == YES) {
-            [targetObject performSelector:selectorForExecute withObject:selectorArg];
+            IMP methodImp = [targetObject methodForSelector:selectorForExecute];
+            void (*wrapFuncForMethod)(id, SEL, id) = (void*)methodImp;
+            
+            wrapFuncForMethod(targetObject, selectorForExecute, selectorArg);
         } else {
             Class classOfObject = [selectorArg class];
             if ([classOfObject isSubclassOfClass:[NSDictionary class]] == YES) {
@@ -134,8 +137,12 @@ andWithSelectorArgument:(id)selectorArg {
                                        andForObject:nestedObject
                                        andWithError:error
                               andWithPropertyObject:nestedProperty
-                 andWithSelectorArgument:[selectorArg objectForKey:lookingPropertyKey]];
-                [targetObject performSelector:selectorForExecute withObject:nestedObject];
+                            andWithSelectorArgument:[selectorArg objectForKey:lookingPropertyKey]];
+                
+                IMP methodImp = [targetObject methodForSelector:selectorForExecute];
+                void (*wrapFuncForMethod)(id, SEL, id) = (void*)methodImp;
+                
+                wrapFuncForMethod(targetObject, selectorForExecute, nestedObject);
             }
         }
     } else {
@@ -154,7 +161,7 @@ andWithSelectorArgument:(id)selectorArg {
     ///---------------------------------------
     if (setterName != NULL) {
         resultSelector = NSSelectorFromString([NSString stringWithUTF8String:setterName]);
-        free(setterName);
+        free((void*)setterName);
     } else {
         NSString *firstCharacter = [expSetterName substringWithRange:NSMakeRange(0, 1)];
         NSString *nameOfSelector = [NSString stringWithFormat:@"set%@%@:", [firstCharacter capitalizedString], [expSetterName substringWithRange:NSMakeRange(1, expSetterName.length - 1)], nil];
