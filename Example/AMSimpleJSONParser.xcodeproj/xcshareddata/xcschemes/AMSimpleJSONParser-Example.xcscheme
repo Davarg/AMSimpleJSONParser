@@ -37,6 +37,11 @@
                BlueprintName = "AMSimpleJSONParser_Tests"
                ReferencedContainer = "container:AMSimpleJSONParser.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AMSimpleJSONParserSpec/test_these_will_fail__should_be_nil">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

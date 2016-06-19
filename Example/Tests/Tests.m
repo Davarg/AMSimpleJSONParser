@@ -8,39 +8,53 @@
 
 // https://github.com/Specta/Specta
 
-SpecBegin(InitialSpecs)
-
-describe(@"these will fail", ^{
-
-    it(@"can do maths", ^{
-        expect(1).to.equal(2);
-    });
-
-    it(@"can read", ^{
-        expect(@"number").to.equal(@"string");
-    });
-    
-    it(@"will wait for 10 seconds and fail", ^{
-        waitUntil(^(DoneCallback done) {
-        
-        });
-    });
-});
+SpecBegin(AMSimpleJSONParser)
 
 describe(@"these will pass", ^{
+    __block NSData *brokenData = nil;
+    __block AMMockBasicModel *brokenMockModel = nil;
     
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
+    __block NSData *correctData = nil;
+    __block AMMockBasicModel *correctMockModel = nil;
+    
+    beforeAll(^{
+        brokenData = [AMMockServer getNotSuccessfulResponse];
+        brokenMockModel = [AMSimpleJsonParser parseJsonWithData:brokenData
+                                              andWithModelClass:[AMMockBasicModel class]
+                                             andWithErrorObject:nil];
+        
+        correctData = [AMMockServer getSuccessfulResponse];
+        correctMockModel = [AMSimpleJsonParser parseJsonWithData:correctData
+                                               andWithModelClass:[AMMockBasicModel class]
+                                              andWithErrorObject:nil];
     });
     
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
+    it(@"model object should be nil", ^{
+        XCTAssertNil(brokenMockModel);
     });
     
-    it(@"will wait and succeed", ^{
-        waitUntil(^(DoneCallback done) {
-            done();
-        });
+    it(@"model object should not be nil", ^{
+        XCTAssertNotNil(correctMockModel);
+    });
+    
+    it(@"field 'tags' should not be nil", ^{
+        XCTAssertNotNil(correctMockModel.tags);
+    });
+    
+    it(@"field 'uniqId' should not be nil", ^{
+        XCTAssertNotNil(correctMockModel.uniqId);
+    });
+    
+    it(@"field 'friends' should not be nil", ^{
+        XCTAssertNotNil(correctMockModel.friends);
+    });
+    
+    it(@"field 'greeting' should not be nil", ^{
+        XCTAssertNotNil(correctMockModel.greeting);
+    });
+    
+    it(@"field 'lastProperty' should not be nil", ^{
+        XCTAssertNotNil(correctMockModel.nestingLevelOne.nestingLevelTwo.nestingLevelThree.nestingLevelFour.lastProperty);
     });
 });
 

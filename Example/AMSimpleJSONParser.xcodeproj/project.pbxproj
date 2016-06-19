@@ -13,6 +13,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		AB441336E38CA8FDB9284773 /* Pods_AMSimpleJSONParser_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2D817EECA92FEFC40972AED /* Pods_AMSimpleJSONParser_Tests.framework */; };
+		D91E307A1D1686B00050A2E2 /* AMMockBasicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D91E30791D1686B00050A2E2 /* AMMockBasicModel.m */; };
+		D91E307D1D1687540050A2E2 /* AMMockServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D91E307C1D1687540050A2E2 /* AMMockServer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		641DF77593922C38D6820881 /* AMSimpleJSONParser.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMSimpleJSONParser.podspec; path = ../AMSimpleJSONParser.podspec; sourceTree = "<group>"; };
 		C2D817EECA92FEFC40972AED /* Pods_AMSimpleJSONParser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMSimpleJSONParser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D91E30781D1686B00050A2E2 /* AMMockBasicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMMockBasicModel.h; path = MockObjects/AMMockBasicModel.h; sourceTree = "<group>"; };
+		D91E30791D1686B00050A2E2 /* AMMockBasicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMMockBasicModel.m; path = MockObjects/AMMockBasicModel.m; sourceTree = "<group>"; };
+		D91E307B1D1687540050A2E2 /* AMMockServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMMockServer.h; path = MockObjects/AMMockServer.h; sourceTree = "<group>"; };
+		D91E307C1D1687540050A2E2 /* AMMockServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMMockServer.m; path = MockObjects/AMMockServer.m; sourceTree = "<group>"; };
 		DCC333C76FA165E8560DC644 /* Pods-AMSimpleJSONParser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMSimpleJSONParser_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMSimpleJSONParser_Tests/Pods-AMSimpleJSONParser_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +88,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D91E30771D1686820050A2E2 /* MockObjects */,
 				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
@@ -115,6 +122,17 @@
 				DCC333C76FA165E8560DC644 /* Pods-AMSimpleJSONParser_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D91E30771D1686820050A2E2 /* MockObjects */ = {
+			isa = PBXGroup;
+			children = (
+				D91E30781D1686B00050A2E2 /* AMMockBasicModel.h */,
+				D91E30791D1686B00050A2E2 /* AMMockBasicModel.m */,
+				D91E307B1D1687540050A2E2 /* AMMockServer.h */,
+				D91E307C1D1687540050A2E2 /* AMMockServer.m */,
+			);
+			name = MockObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +255,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91E307D1D1687540050A2E2 /* AMMockServer.m in Sources */,
+				D91E307A1D1686B00050A2E2 /* AMMockBasicModel.m in Sources */,
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

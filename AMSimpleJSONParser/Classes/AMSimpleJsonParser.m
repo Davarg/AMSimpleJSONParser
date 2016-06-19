@@ -39,7 +39,7 @@ andWithSelectorArgument:(id)selectorArg;
     id parsedDic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                    options:NSJSONReadingAllowFragments
                                                      error:error];
-    if (*error != nil) {
+    if (error != nil) {
         ///----------------------
         #pragma mark - Return NIL
         ///----------------------

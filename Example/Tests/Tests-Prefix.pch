@@ -2,7 +2,11 @@
 
 #ifdef __OBJC__
 
-  @import Specta;
-  @import Expecta;
+    #import <Specta/Specta.h>
+    #import <Expecta/Expecta.h>
+
+    #import "AMMockServer.h"
+    #import "AMMockBasicModel.h"
+    #import "AMSimpleJsonParser.h"
 
 #endif

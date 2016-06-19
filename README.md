@@ -2,8 +2,8 @@
 
 [![CI Status](http://img.shields.io/travis/Alex Makushkin/AMSimpleJSONParser.svg?style=flat)](https://travis-ci.org/Alex Makushkin/AMSimpleJSONParser)
 [![Version](https://img.shields.io/cocoapods/v/AMSimpleJSONParser.svg?style=flat)](http://cocoapods.org/pods/AMSimpleJSONParser)
-[![License](https://img.shields.io/cocoapods/l/AMSimpleJSONParser.svg?style=flat)](http://cocoapods.org/pods/AMSimpleJSONParser)
-[![Platform](https://img.shields.io/cocoapods/p/AMSimpleJSONParser.svg?style=flat)](http://cocoapods.org/pods/AMSimpleJSONParser)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://cocoapods.org/pods/AMSimpleJSONParser)
+[![Platform](https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat)](http://cocoapods.org/pods/AMSimpleJSONParser)
 
 ## Installation
 
